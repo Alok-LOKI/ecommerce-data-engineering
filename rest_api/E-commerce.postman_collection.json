@@ -1,0 +1,1013 @@
+{
+  "info": {
+    "_postman_id": "293d9dcb-8aaa-4040-86ea-172de9fd35ce",
+    "name": "E-commerce Supabase REST API – 20 Requests",
+    "description": "Complete Postman collection (20 REST API requests) for Data Engineering assignment – E-commerce domain.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51039004",
+    "_collection_link": "https://go.postman.co/collection/51039004-293d9dcb-8aaa-4040-86ea-172de9fd35ce?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "1. List Customers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers?select",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "select",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get Customer by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers?customer_id=eq.1",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "customer_id",
+                  "value": "eq.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Filter Customers by Email",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers?email=like.*@mail.com",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "like.*@mail.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"full_name\":\"Frank Martin\",\"email\":\"frank.martin@mail.com\",\"phone\":\"9001122334\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Update Customer",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"phone\":\"8887776666\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers?customer_id=eq.1",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "customer_id",
+                  "value": "eq.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Delete Customer",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/customers?customer_id=eq.6",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "customer_id",
+                  "value": "eq.6"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "7. List Categories",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/categories",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"category_name\":\"Gaming\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/categories",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "9. List Suppliers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representationsb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU:sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/suppliers",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10. Create Supplier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"supplier_name\":\"GamerZone Ltd\",\"contact_email\":\"sales@gamerzone.com\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/suppliers",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "11. List Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/products",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12. Filter Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/products?price=gt.100&order=price.desc",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "price",
+                  "value": "gt.100"
+                },
+                {
+                  "key": "order",
+                  "value": "price.desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13. Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/products?product_id=eq.1",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "eq.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14. Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"product_name\":\"Gaming Mouse\",\"price\":45,\"stock\":50,\"category_id\":1,\"supplier_id\":1}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/products",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "15. Update Product Stock",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"stock\":20}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/products?product_id=eq.1",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "eq.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "16. Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"customer_id\":2,\"status\":\"pending\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/orders",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "17. List Orders by Customer",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/orders?customer_id=eq.2",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "customer_id",
+                  "value": "eq.2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order Items & Payments",
+      "item": [
+        {
+          "name": "18. Add Order Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"order_id\":2,\"product_id\":3,\"quantity\":2}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/order_items",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "order_items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "19. Create Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"order_id\":2,\"payment_method\":\"Credit Card\",\"payment_status\":\"Paid\"}"
+            },
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/payments",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "20. List Paid Payments",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sb_publishable_ZgDNu85KjVKOGNx4YvVq_g_di1eYgpU",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Prefer",
+                "value": "return=representation",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1/payments?payment_status=eq.Paid",
+              "protocol": "https",
+              "host": [
+                "bqubgslkjggogzlbqxtz",
+                "supabase",
+                "co"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "payment_status",
+                  "value": "eq.Paid"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://bqubgslkjggogzlbqxtz.supabase.co/rest/v1"
+    },
+    {
+      "key": "api_key",
+      "value": "PASTE_YOUR_PUBLISHABLE_ANON_KEY_HERE"
+    }
+  ]
+}
