@@ -1,82 +1,120 @@
-# E-commerce Data Engineering Project
+﻿# E-commerce Data Engineering Project
 
-## Overview
-This project demonstrates an end-to-end Data Engineering solution for an E-commerce platform.
-It covers database design, SQL implementation, and REST API integration using industry-standard tools.
-
-The project was developed as part of an academic Data Engineering assignment and reflects real-world
-data modeling and API practices.
+An end-to-end data engineering project for an e-commerce platform. It covers **relational database design (ERD)**, **PostgreSQL implementation on Supabase**, **analytical SQL queries**, and a **REST API layer tested with Postman**.
 
 ---
 
 ## Tech Stack
-- Database: PostgreSQL (Supabase)
-- Data Modeling: ERD (dbdiagram.io)
-- API Layer: Supabase REST API
-- API Testing: Postman
-- Language: SQL
-- Data Format: JSON
+| Layer | Tool |
+|---|---|
+| Database | PostgreSQL (Supabase) |
+| Data Modeling | dbdiagram.io (ERD) |
+| API Layer | Supabase REST API (PostgREST) |
+| API Testing | Postman |
+| Language / Format | SQL, JSON |
+
+---
+
+## Project Structure
+```
+ecommerce-data-engineering/
+├── database/          # DDL schema + sample data (schema.sql, ecommerce_schema.sql)
+├── erd/               # ERD diagrams
+├── sql_queries/       # 15 analytical queries (queries.sql)
+├── rest_api/          # Postman collection (20 endpoints)
+├── screenshots/       # Query result screenshots
+└── README.md
+```
 
 ---
 
 ## Database Design (ERD)
-The database consists of the following entities:
-- Customers
-- Categories
-- Suppliers
-- Products
-- Orders
-- Order Items
-- Payments
+**Entities:** Customers, Categories, Suppliers, Products, Orders, Order Items, Payments
 
-Key relationships:
-- One-to-Many: Customers to Orders
-- One-to-Many: Categories to Products
-- One-to-Many: Suppliers to Products
-- Many-to-Many: Orders and Products (resolved using Order Items)
-- One-to-One: Orders to Payments
+**Relationships:**
+- One-to-Many: Customers → Orders
+- One-to-Many: Categories → Products
+- One-to-Many: Suppliers → Products
+- Many-to-Many: Orders ↔ Products (resolved via `order_items`)
+- One-to-One: Orders → Payments
 
-ERD diagrams are available in the erd folder.
+### ERD (dbdiagram.io)
+![ERD](erd/dbddia%20(1).png)
+
+### Supabase Schema Visualizer
+![Supabase Schema](erd/supabase-schema-bqubgslkjggogzlbqxtz.png)
 
 ---
 
 ## Database Implementation
-The schema was implemented in PostgreSQL using Supabase.
-SQL Data Definition Language statements were used to create all tables with appropriate constraints.
-Foreign keys were applied to maintain referential integrity.
-Sample data was inserted to simulate real-world e-commerce transactions.
+- Tables created with SQL DDL in PostgreSQL (Supabase)
+- Primary keys, foreign keys, `NOT NULL`, `UNIQUE` and `CHECK` constraints for data integrity
+- Sample data inserted to simulate real-world e-commerce transactions
 
-Files:
-- database/schema.sql
-- sql_queries/queries.sql
+Files: [`database/schema.sql`](database/schema.sql), [`sql_queries/queries.sql`](sql_queries/queries.sql)
 
 ---
 
-## REST API Implementation
-The database was exposed using Supabase REST APIs.
-A total of 20 REST endpoints were implemented to perform CRUD operations.
-Postman was used to test all endpoints.
-Authentication was handled using the Supabase publishable anon API key.
+## SQL Queries & Results
 
-Postman collection:
-- rest_api/Ecommerce_Postman_20_Requests.json
+| # | Query | Screenshot |
+|---|---|---|
+| 1 | Retrieve all customers | [view](screenshots/1%20Retrieve%20all%20customers.png) |
+| 2 | List all products sorted by price (highest first) | [view](screenshots/2%20List%20all%20products%20sorted%20by%20price%20(highest%20first).png) |
+| 3 | Products with their category names | [view](screenshots/3%20Get%20all%20products%20with%20their%20category%20names.png) |
+| 4 | Products with supplier information | [view](screenshots/4%20Get%20all%20products%20with%20supplier%20information.png) |
+| 5 | Count total number of customers | [view](screenshots/5%20Count%20total%20number%20of%20customers.png) |
+| 6 | Total number of orders per customer | [view](screenshots/6%20Total%20number%20of%20orders%20per%20customer.png) |
+| 7 | Average price of all products | [view](screenshots/7%20Average%20price%20of%20all%20products.png) |
+| 8 | Total quantity of items per order | [view](screenshots/8%20Total%20quantity%20of%20items%20per%20order.png) |
+| 9 | Orders with customer names and status | [view](screenshots/9%20Orders%20with%20customer%20names%20and%20status.png) |
+| 10 | Orders that have no payment record | [view](screenshots/10%20Orders%20that%20have%20no%20payment%20record.png) |
+| 11 | Total revenue from all orders | [view](screenshots/11%20Total%20revenue%20generated%20from%20all%20orders.png) |
+| 12 | Products with low stock (< 20) | [view](screenshots/12%20Products%20with%20low%20stock%20(less%20than%2020).png) |
+| 13 | Number of products in each category | [view](screenshots/13%20Number%20of%20products%20in%20each%20category.png) |
+| 14 | Customers who placed completed orders | [view](screenshots/14%20Customers%20who%20placed%20completed%20orders.png) |
+| 15 | Payment details with customer name | [view](screenshots/15%20Payment%20details%20with%20customer%20name.png) |
+
+### Highlights
+**Products with category names (JOIN)**
+![Q3](screenshots/3%20Get%20all%20products%20with%20their%20category%20names.png)
+
+**Orders with no payment record (LEFT JOIN / anti-join)**
+![Q10](screenshots/10%20Orders%20that%20have%20no%20payment%20record.png)
+
+**Total revenue (aggregation)**
+![Q11](screenshots/11%20Total%20revenue%20generated%20from%20all%20orders.png)
+
+**Products per category (GROUP BY)**
+![Q13](screenshots/13%20Number%20of%20products%20in%20each%20category.png)
 
 ---
 
-## Documentation
-Detailed project documentation is available in:
-- documentation/Data_Engineering_Ecommerce_Assignment.pdf
+## REST API
+- Database exposed via **Supabase auto-generated REST APIs**
+- **20 endpoints** covering full CRUD (GET / POST / PATCH / DELETE)
+- Filtering, ordering and embedded relations using PostgREST query syntax
+- Authenticated with the Supabase publishable (anon) API key
+- Tested in Postman — import [`rest_api/E-commerce.postman_collection.json`](rest_api/E-commerce.postman_collection.json)
+
+Example:
+```http
+GET https://<project>.supabase.co/rest/v1/products?select=*,categories(name)&order=price.desc
+apikey: <SUPABASE_ANON_KEY>
+```
 
 ---
 
-## Team Contribution
-This project was completed as a three-member team:
-- ERD and data modeling
-- Database and SQL implementation
-- REST API development and testing
+## How to Run
+1. Create a free project on [Supabase](https://supabase.com).
+2. Open the SQL Editor and run `database/schema.sql`.
+3. Run queries from `sql_queries/queries.sql`.
+4. Import the Postman collection, set your project URL and anon key, and send requests.
 
 ---
 
-## Outcome
-This project demonstrates practical experience in relational data modeling,
-SQL development, and REST API integration, following industry best practices.
+## Key Learnings
+- Normalized relational modeling and resolving many-to-many relationships
+- Enforcing referential integrity with constraints
+- Writing analytical SQL: JOINs, aggregations, GROUP BY, anti-joins
+- Exposing a database as a REST API and testing it end-to-end
