@@ -39,7 +39,7 @@ ecommerce-data-engineering/
 - One-to-One: Orders → Payments
 
 ### ERD (dbdiagram.io)
-![ERD](erd/dbddia%20(1).png)
+![ERD](erd/dbddia%20%281%29.png)
 
 ### Supabase Schema Visualizer
 ![Supabase Schema](erd/supabase-schema-bqubgslkjggogzlbqxtz.png)
@@ -60,7 +60,7 @@ Files: [`database/schema.sql`](database/schema.sql), [`sql_queries/queries.sql`]
 | # | Query | Screenshot |
 |---|---|---|
 | 1 | Retrieve all customers | [view](screenshots/1%20Retrieve%20all%20customers.png) |
-| 2 | List all products sorted by price (highest first) | [view](screenshots/2%20List%20all%20products%20sorted%20by%20price%20(highest%20first).png) |
+| 2 | List all products sorted by price (highest first) | [view](screenshots/2%20List%20all%20products%20sorted%20by%20price%20%28highest%20first%29.png) |
 | 3 | Products with their category names | [view](screenshots/3%20Get%20all%20products%20with%20their%20category%20names.png) |
 | 4 | Products with supplier information | [view](screenshots/4%20Get%20all%20products%20with%20supplier%20information.png) |
 | 5 | Count total number of customers | [view](screenshots/5%20Count%20total%20number%20of%20customers.png) |
@@ -70,7 +70,7 @@ Files: [`database/schema.sql`](database/schema.sql), [`sql_queries/queries.sql`]
 | 9 | Orders with customer names and status | [view](screenshots/9%20Orders%20with%20customer%20names%20and%20status.png) |
 | 10 | Orders that have no payment record | [view](screenshots/10%20Orders%20that%20have%20no%20payment%20record.png) |
 | 11 | Total revenue from all orders | [view](screenshots/11%20Total%20revenue%20generated%20from%20all%20orders.png) |
-| 12 | Products with low stock (< 20) | [view](screenshots/12%20Products%20with%20low%20stock%20(less%20than%2020).png) |
+| 12 | Products with low stock (< 20) | [view](screenshots/12%20Products%20with%20low%20stock%20%28less%20than%2020%29.png) |
 | 13 | Number of products in each category | [view](screenshots/13%20Number%20of%20products%20in%20each%20category.png) |
 | 14 | Customers who placed completed orders | [view](screenshots/14%20Customers%20who%20placed%20completed%20orders.png) |
 | 15 | Payment details with customer name | [view](screenshots/15%20Payment%20details%20with%20customer%20name.png) |
